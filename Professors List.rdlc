@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodProf_ProfessorsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodProf_ProfessorsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodProf_ProfessorsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Name_ProfessorsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Name_ProfessorsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Name_ProfessorsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Morada_ProfessorsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Morada_ProfessorsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Morada_ProfessorsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Phone_ProfessorsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Phone_ProfessorsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Phone_ProfessorsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Email_ProfessorsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Email_ProfessorsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Email_ProfessorsCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CodProf_Professors">
+          <DataField>CodProf_Professors</DataField>
+        </Field>
+        <Field Name="Name_Professors">
+          <DataField>Name_Professors</DataField>
+        </Field>
+        <Field Name="Morada_Professors">
+          <DataField>Morada_Professors</DataField>
+        </Field>
+        <Field Name="Phone_Professors">
+          <DataField>Phone_Professors</DataField>
+        </Field>
+        <Field Name="Email_Professors">
+          <DataField>Email_Professors</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
